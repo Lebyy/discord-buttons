@@ -1,6 +1,6 @@
 {
   "name": "discord-buttons",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Discord.js buttons",
   "main": "index.js",
   "scripts": {

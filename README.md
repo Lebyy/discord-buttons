@@ -84,6 +84,10 @@ client.on('clickButton', button => {
 });
 ```
 
+## Don't see the buttons?
+Now this is beta, you must be a discord tester!
+Check on google how to get discord tester
+
 <br>
 
 > Found errors? DM me `Angelo II#0007`
