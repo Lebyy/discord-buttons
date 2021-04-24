@@ -84,29 +84,6 @@ client.on('clickButton', button => {
 });
 ```
 
-## Don't see the buttons?
-**1** - `CTRL` + `SHIFT` + `I`
-<br>
-**2** - Go to console
-<br>
-**3** - Paste this code:
-```js
-webpackJsonp.push([[999],{"l":(m,e,r)=>{for(k in r.c)(m=r.c[k].exports)&&m.default&&m.default.isDeveloper==0&&Object.defineProperty(m.default,"isDeveloper",{get:()=>1})}},[["l"]]])
-```
-**4** - Click enter
-<br>
-**5** - Close the Developer Tools
-<br>
-**6** - Go to `User Settings`
-<br>
-**7** - Go to `Experiments`
-<br>
-**8** - Go to `Desktop Bot UI Kit Buttons`
-<br>
-**9** - Click and select `Treatment 1`
-<br>
-**10** - Done
-
 <br>
 
 > Found errors? DM me `Angelo II#0007`
