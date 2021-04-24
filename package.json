@@ -1,0 +1,25 @@
+{
+  "name": "discord-buttons",
+  "version": "1.0.0",
+  "description": "Discord.js buttons",
+  "main": "index.js",
+  "scripts": {
+    "prepare": ""
+  },
+  "keywords": [
+    "discord.js",
+    "discordbuttons",
+    "buttonsbot",
+    "discordjsbuttons",
+    "buttons",
+    "discordjsbuttons",
+    "button",
+    "angeloii",
+    "src"
+  ],
+  "author": "Angelo II#0007",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
