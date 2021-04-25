@@ -19,16 +19,16 @@ $ npm i discord-buttons
 ```
 ## Setup
 ```js
-const discord = require('discord.js');
-const client = new discord.Client();
-require('discord-buttons');
+const discord = require('discord.js'); //Define the discord.js module
+const client = new discord.Client(); //Creating discord.js client (constructor)
+require('discord-buttons')(client); //Starting the discord-buttons class
 ```
 
 ## Example
 ```js
 const discord = require('discord.js');
-const client = new discord.Client()
-require('discord-buttons');
+const client = new discord.Client();
+require('discord-buttons')(client);
 
 client.on('ready', () => console.log(client.user.tag));
 
@@ -55,26 +55,6 @@ client.on('message', message => {
 client.login("TOKEN");
 ```
 
-## Embed
-```js
-    if (message.content.startsWith('!embed')) {
-
-        let embed = new discord.MessageEmbed()
-        .setAuthor('Oh, hey!');
-
-        message.buttons('Hello World!', {
-            buttons: [
-                {
-                    style: 'green',
-                    label: 'Click to function!',
-                    id: 'click_to_function'
-                }
-            ],
-            embed: embed
-        })
-    }
-```
-
 ## When button is clicked
 ```js
 client.on('clickButton', button => {
@@ -84,13 +64,21 @@ client.on('clickButton', button => {
 });
 ```
 
-## Don't see the buttons?
-Now this is beta, you must be a discord tester!
-Check on google how to get discord tester
+## Note: don't forgot to put `require('discord-buttons')(client)` after your client
 
 <br>
 
-> Found errors? DM me `Angelo II#0007`
+## Documentation
+Checkout more examples on our [docs](https://angelocore.gitbook.io/discord-buttons)
+
+<br>
+
+## Don't see the buttons?
+The buttons are beta, so to see them you have to be a discord-tester or just wait for the update
+
+<br>
+
+> For any questions or errors, join in our server and report the bug on the #errors channel https://discord.gg/5JtyYqW
 
 <hr>
 
