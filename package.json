@@ -19,6 +19,7 @@
     "src",
     "clickbois"
   ],
+  "types": "typings/index.d.ts",
   "author": "Angelo II#0007",
   "license": "Apache-2.0",
   "repository": {
