@@ -1,8 +1,13 @@
 {
   "name": "discord-buttons",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Discord.js buttons",
   "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "funding": {
+    "type" : "individual",
+    "url" : "https://ko-fi.com/angelocore"
+  },
   "keywords": [
     "discord.js",
     "discordbuttons",
@@ -16,9 +21,6 @@
   ],
   "author": "Angelo II#0007",
   "license": "Apache-2.0",
-  "dependencies": {
-    "discord.js": "^12.5.3"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AngeloCore/discord-buttons.git"
@@ -26,5 +28,11 @@
   "bugs": {
     "url": "https://github.com/AngeloCore/discord-buttons/issues"
   },
-  "homepage": "https://angelocore.gitbook.io/discord-buttons"
+  "homepage": "https://angelocore.gitbook.io/discord-buttons",
+  "devDependencies": {
+    "@types/node": "^15.3.0"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
 }
