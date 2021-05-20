@@ -21,21 +21,16 @@ $ npm i discord-buttons
 ```js
 const discord = require('discord.js'); //Define the discord.js module
 const client = new discord.Client(); //Creating discord.js client (constructor)
-
-require('discord-buttons')(client); //Starting the discord-buttons class
-//or if you want to use MessageButton class
 const disbut = require('discord-buttons')(client);
-//or if you use just "require('discord-buttons')(client);"
-const { MessageButton } = require('discord-buttons');
 ```
 
 <br />
 
-## [Documentation](https://angelocore.gitbook.io/discord-buttons)
+> For more examples check our [Documentation](https://angelocore.gitbook.io/discord-buttons)
 
 <br />
 
-## Example with `MessageButton`
+## Example
 ```js
 let button = new disbut.MessageButton()
   .setStyle('red') //default: blurple
@@ -65,31 +60,30 @@ message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', {
   ]
 });
 ```
-
-## Example
+### Using command handler?
 ```js
-message.buttons('Hello World!', {
-  buttons: [
-    {
-      style: 'green',
-      label: 'Click to function!',
-      id: 'click_to_function'
-    },
-    {
-      style: 'url',
-      label: 'Vote for me!',
-      url: 'https://npmjs.com/top.gg-core'
+const { MessageButton } = require('discord-buttons');
+
+module.exports = {
+    name: 'test',
+    run: async (client, message, args) => {
+        let button = new disbut.MessageButton()
+          .setStyle('red') //default: blurple
+          .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
+          .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
+          .setDisabled(); //disables the button | default: false
+
+        await message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
     }
-  ]
-})
+}
 ```
 
-## When button is clicked
+## Handle Button
 ```js
-client.on('clickButton', button => {
-    if (button.id === 'click_to_function') {
-      button.message.channel.send(button.clicker.user.tag)
-    }
+client.on('clickButton', async (button) => {
+  if (button.id === 'click_to_function') {
+    button.channel.send(`${button.clicker.user.tag} clicked button!`);
+  }
 });
 ```
 

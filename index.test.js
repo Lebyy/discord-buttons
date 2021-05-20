@@ -9,7 +9,7 @@ client.on('message', async message => {
     if (message.author.bot) return;
     if (message.content.startsWith('o')) {
 
-        await message.channel.messages.fetch();
+        /*await message.channel.messages.fetch();
 
         let m = message;
         message = await message.channel.messages.fetch('836138144910409748');
@@ -17,9 +17,12 @@ client.on('message', async message => {
         const filter = (button) => button;
         const collector = await message.awaitButtons(filter, { time: 15 * 1000 });
 
-        console.log(collector)
+        console.log(collector)*/
 
-        //message.channel.send('hi', btn);
+        let btn = new disbut.MessageButton()
+            .setLabel('s');
+
+        message.reply('hi', btn);
         //message.author.send('p', btn);
 
     }
@@ -27,17 +30,11 @@ client.on('message', async message => {
 
 client.on('clickButton', button => {
     button.callback()
-    //console.log(button)
-
-    let embed = new discord.MessageEmbed()
-        .setDescription('XD');
 
     let btn = new disbut.MessageButton()
-        .setLabel('op')
-        .setStyle('blurple')
-        .setID('myid');
+        .setLabel('o')
 
-    //button.reply('stiga s tva o', { flags: 64 }).then(console.log);
+    button.message.edit('o', btn)
 });
 
-client.login('');
+client.login();

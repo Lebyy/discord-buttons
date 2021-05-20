@@ -1,9 +1,12 @@
 const { sendAPICallback } = require('../Classes/APIMessage');
 
 module.exports = async (client, data) => {
+    if (!data.message) return;
+    
     if (data.data.component_type === 2) {
         
-        let message = await client.channels.cache.get(data.channel_id).messages.fetch(data.message.id);
+        let channel = client.channels.cache.get(data.channel_id);
+        let message = await channel.messages.fetch(data.message.id);
 
         let clicker = {}
 
@@ -47,6 +50,7 @@ module.exports = async (client, data) => {
             reply: reply,
             callback: callback,
             guild: data.guild_id ? client.guilds.cache.get(data.guild_id) : undefined,
+            channel: channel,
             message: message
         })
     }

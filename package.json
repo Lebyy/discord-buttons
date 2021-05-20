@@ -1,9 +1,9 @@
 {
   "name": "discord-buttons",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Discord.js buttons",
   "main": "src/index.js",
-  "types": "types/index.d.ts",
+  "types": "typings/index.d.ts",
   "funding": {
     "type" : "individual",
     "url" : "https://ko-fi.com/angelocore"
@@ -31,8 +31,5 @@
   "homepage": "https://angelocore.gitbook.io/discord-buttons",
   "devDependencies": {
     "@types/node": "^15.3.0"
-  },
-  "dependencies": {
-    "discord.js": "^12.5.3"
   }
 }
