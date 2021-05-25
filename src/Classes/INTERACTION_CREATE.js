@@ -91,13 +91,13 @@ class ButtonEvent {
 
         let _fetch = async () => {
             const raw = await this.webhook.fetchMessage('@original');
-            return this.channel ? this.channel.messages.add(raw) : undefined ?? raw;
+            return this.channel ? this.channel.messages.add(raw) : raw;
         }
 
         let _edit = async (content, options = {}) => {
             if (this.deferred === false && this.replied === false) throw new Error('BUTTON_ALREADY_REPLIED: This button has no reply');
             const raw = await this.webhook.editMessage('@original', content, options);
-            return this.channel ? this.channel.messages.add(raw) : undefined ?? raw;
+            return this.channel ? this.channel.messages.add(raw) : raw;
         }
 
         let _delete = async () => {

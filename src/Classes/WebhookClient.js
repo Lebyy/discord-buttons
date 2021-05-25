@@ -30,6 +30,6 @@ module.exports = class extends WebhookClient {
 
     async fetchMessage(message, cache = true) {
         const data = await this.client.api.webhooks(this.id, this.token).messages(message).get();
-        return this.client.channels ? (this.client.channels.cache.get(data.channel_id) ? this.client.channels.cache.get(data.channel_id).messages.add(data, cache) : null) : undefined ?? data;
+        return this.client.channels ? (this.client.channels.cache.get(data.channel_id) ? this.client.channels.cache.get(data.channel_id).messages.add(data, cache) : null) : data;
     }
 }
