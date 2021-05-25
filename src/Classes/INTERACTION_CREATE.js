@@ -82,7 +82,7 @@ class ButtonEvent {
                 .post({
                     data: {
                         data: info,
-                        type: [4, 5, 6, 7].includes(parseInt(options?.type)) ? parseInt(options.type) : 4,
+                        type: options.type ? ([4, 5, 6, 7].includes(parseInt(options.type)) ? parseInt(options.type) : 4) : 4,
                     },
                     files
                 });
@@ -91,13 +91,13 @@ class ButtonEvent {
 
         let _fetch = async () => {
             const raw = await this.webhook.fetchMessage('@original');
-            return this.channel?.messages.add(raw) ?? raw;
+            return this.channel ? this.channel.messages.add(raw) : undefined ?? raw;
         }
 
         let _edit = async (content, options = {}) => {
             if (this.deferred === false && this.replied === false) throw new Error('BUTTON_ALREADY_REPLIED: This button has no reply');
             const raw = await this.webhook.editMessage('@original', content, options);
-            return this.channel?.messages.add(raw) ?? raw;
+            return this.channel ? this.channel.messages.add(raw) : undefined ?? raw;
         }
 
         let _delete = async () => {
