@@ -9,15 +9,17 @@ class MessageButton {
 
     setup(data) {
 
-        this.style = resolveStyle(data.style);
+        this.style = 'style' in data ? resolveStyle(resolveString(data.style)) : null;
 
-        this.label = 'label' in data ? resolveString(data.label) : 'NO_LABEL_PROVIDED';
+        this.label = 'label' in data ? resolveString(data.label) : null;
 
-        this.disabled = 'disabled' in data ? data.disabled : false;
+        this.disabled = 'disabled' in data ? Boolean(data.disabled) : false;
 
-        this.url = this.style === 5 ? resolveString(data.url || 'https://discord.com/') : null;
-
-        this.custom_id = this.style === 5 ? null : resolveString(data.id || 'myid');
+        if (this.style === 5) {
+            this.url = 'url' in data ? resolveString(data.url) : null;
+        } else {
+            this.custom_id = 'id' in data ? resolveString(data.id): null;
+        }
 
         this.type = 2;
 
