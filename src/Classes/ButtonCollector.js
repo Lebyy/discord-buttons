@@ -43,7 +43,7 @@ class ButtonCollector extends Collector {
   }
 
   dispose() {
-      return null;
+    return null;
   }
 
   empty() {
@@ -55,7 +55,6 @@ class ButtonCollector extends Collector {
 
   endReason() {
     if (this.options.max && this.total >= this.options.max) return 'limit';
-    if (this.options.maxUsers && this.users.size >= this.options.maxUsers) return 'userLimit';
     return null;
   }
 
