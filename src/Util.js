@@ -9,23 +9,30 @@ const styles = {
 module.exports = {
     resolveStyle(style) {
 
-        if (!style || style === undefined) {
-            style = Object.keys(styles)[0];
-        }
+        if (!style || style === undefined || style === null) throw new TypeError('NO_BUTTON_STYLE: Please provide button style');
 
-        if (!Object.keys(styles).includes(style)) {
-            style = Object.keys(styles)[0];
-        }
+        if (!styles[style] || styles[style] === undefined || styles[style] === null) throw new TypeError('INVALID_BUTTON_STYLE: An invalid button styles was provided');
 
-        return styles[style];
+        return styles[style] || style;
     },
-    resolveButton(button) {
+    resolveButton(data) {
+
+        if (!data.style) throw new TypeError('NO_BUTTON_STYLE: Please provide button style');
+
+        if (!data.label) throw new TypeError('NO_BUTTON_LABEL: Please provide button label');
+
+        if (data.style === 5) {
+            if (!data.url) throw new TypeError('NO_BUTTON_URL: You provided url style, you must provide an URL');
+        } else {
+            if (!data.custom_id) throw new TypeError('NO_BUTTON_ID: Please provide button id');
+        }
+
         return {
-            style: button.style,
-            label: button.label,
-            disabled: button.disabled,
-            url: button.url,
-            custom_id: button.custom_id,
+            style: data.style,
+            label: data.label,
+            disabled: Boolean(data.disabled),
+            url: data.url,
+            custom_id: data.custom_id,
             type: 2
         }
     },
