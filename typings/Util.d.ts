@@ -1,6 +1,6 @@
-export function resolveStyle(style: string): string;
-export function resolveButton(button: object): {
-    style: string;
+export function resolveStyle(style: any): number;
+export function resolveButton(data: object): {
+    style: number;
     label: string;
     disabled: boolean;
     url: string;

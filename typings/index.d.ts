@@ -6,4 +6,4 @@ declare namespace _exports {
 }
 export = _exports;
 import MessageButton = require("./Classes/MessageButton");
-import { Client } from "discord.js";
+import { Client } from 'discord.js';
