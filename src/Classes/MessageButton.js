@@ -53,7 +53,7 @@ class MessageButton {
         return this;
     }
 
-    setEmoji({emojiName, emojiID}) {
+    setEmoji(emojiName, emojiID) {
         emojiName = resolveString(emojiName);
         emojiID = resolveString(emojiID);
 
