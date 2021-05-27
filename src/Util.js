@@ -19,7 +19,7 @@ module.exports = {
 
         if (!data.style) throw new TypeError('NO_BUTTON_STYLE: Please provide button style');
 
-        if (!data.label) throw new TypeError('NO_BUTTON_LABEL: Please provide button label');
+        if (!data.label && !data.emoji) throw new TypeError('NO_BUTTON_LABEL_AND_EMOJI: Please provide button label and/or emoji');
 
         if (data.style === 5) {
             if (!data.url) throw new TypeError('NO_BUTTON_URL: You provided url style, you must provide an URL');
