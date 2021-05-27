@@ -52,7 +52,7 @@ let button = new disbut.MessageButton()
 let button2 = new disbut.MessageButton()
   .setStyle('url') //default: blurple
   .setLabel('My Second Button!') //default: NO_LABEL_PROVIDED
-  .setURL('[click_to_function](https://npmjs.com/discord-buttons)') //note: if you use other style you must provide id using .setID('myid')
+  .setURL('https://npmjs.com/discord-buttons') //note: if you use other style you must provide id using .setID('myid')
 
 message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', {
   buttons: [
