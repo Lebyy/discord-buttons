@@ -1,4 +1,4 @@
-const { resolveStyle } = require('../Util');
+const { resolveStyle, isEmoji } = require('../Util');
 const { resolveString } = require('discord.js').Util;
 
 class MessageButton {
@@ -53,11 +53,22 @@ class MessageButton {
         return this;
     }
 
+    setEmoji({emojiName, emojiID}) {
+        emojiName = resolveString(emojiName);
+        emojiID = resolveString(emojiID);
+
+        if (isEmoji(emojiName) === true) this.emoji = { name: emojiName }
+        else if (emojiID.length > 0) this.emoji = { name: emojiName, id: emojiID }
+        else this.emoji = { name: null, id: null };
+        return this;
+    }
+
     toJSON() {
         return {
             type: 2,
             style: this.style,
             label: this.label,
+            emoji: this.emoji,
             disabled: this.disabled,
             url: this.url,
             custom_id: this.custom_id
