@@ -27,8 +27,10 @@ module.exports = (client) => {
     });
 
     return {
-        MessageButton: MessageButton
+        MessageButton: MessageButton,
+        ButtonInteraction: INTERACTION_CREATE,
     };
 }
 
 module.exports.MessageButton = MessageButton;
+module.exports.ButtonInteraction = INTERACTION_CREATE;
