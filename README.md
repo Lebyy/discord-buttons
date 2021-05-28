@@ -15,7 +15,7 @@
 
 ## Install
 ```sh
-$ npm i discord-buttons
+npm i discord-buttons
 ```
 ## Setup
 ```js
