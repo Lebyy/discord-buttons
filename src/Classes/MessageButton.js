@@ -9,6 +9,7 @@ class MessageButton {
 
     setup(data) {
 
+        if(data.style && data.style == 'gray') data.style = 'grey';
         this.style = 'style' in data ? resolveStyle(resolveString(data.style)) : null;
 
         this.label = 'label' in data ? resolveString(data.label) : null;

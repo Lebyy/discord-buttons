@@ -41,6 +41,17 @@ let button = new disbut.MessageButton()
 message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
 ```
 
+### URL Buttons
+```js
+let button = new disbut.MessageButton()
+  .setURL('https://npmjs.com/discord-buttons') //note: if you use other styles it would be changes to 'url' automaticly (also removes 'id')
+  .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
+  .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
+  .setDisabled(); //disables the button | default: false
+
+message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
+```
+
 ### Multiple Buttons
 ```js
 let button = new disbut.MessageButton()
@@ -52,7 +63,7 @@ let button = new disbut.MessageButton()
 let button2 = new disbut.MessageButton()
   .setStyle('url') //default: blurple
   .setLabel('My Second Button!') //default: NO_LABEL_PROVIDED
-  .setURL('[click_to_function](https://npmjs.com/discord-buttons)') //note: if you use other style you must provide id using .setID('myid')
+  .setURL('https://npmjs.com/discord-buttons') //note: if you use other style you must provide id using .setID('myid')
 
 message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', {
   buttons: [
