@@ -27,6 +27,10 @@ module.exports = {
             if (!data.custom_id) throw new TypeError('NO_BUTTON_ID: Please provide button id');
         }
 
+        if (data.emoji.id) {
+            if (isNaN(data.emoji.id)) throw new TypeError('INCORRECT_BUTTON_ID: Please provide correct button id');
+        }
+
         return {
             style: data.style,
             label: data.label,
