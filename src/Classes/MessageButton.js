@@ -53,12 +53,11 @@ class MessageButton {
         return this;
     }
 
-    setEmoji(emojiName, emojiID) {
-        emojiName = resolveString(emojiName);
-        emojiID = resolveString(emojiID);
+    setEmoji(emoji) {
+        emoji = resolveString(emoji);
 
-        if (isEmoji(emojiName) === true) this.emoji = { name: emojiName }
-        else if (emojiID.length > 0) this.emoji = { name: emojiName, id: emojiID }
+        if (isEmoji(emoji) === true) this.emoji = { name: emoji }
+        else if (emoji.length > 0) this.emoji = { id: emoji }
         else this.emoji = { name: null, id: null };
         return this;
     }
