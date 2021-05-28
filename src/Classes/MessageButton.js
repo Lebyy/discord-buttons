@@ -45,10 +45,7 @@ class MessageButton {
     }
 
     setURL(url) {
-        let style_temp;
-        this.url = resolveString(url) ? resolveString(url) : null;
-        if(this.url)
-            style_temp = resolveStyle(resolveString("url")), this.style = style_temp, this.custom_id = null;
+        this.url = this.style === 5 ? resolveString(url) : null;
         return this;
     }
 
