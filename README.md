@@ -13,122 +13,23 @@
   <br> <br>
 </div>
 
-## Install
+## 📂 | Installation
 ```sh
 npm i discord-buttons
 ```
-## Setup
+
+## 📜 | Setup
 ```js
 const discord = require('discord.js'); //Define the discord.js module
 const client = new discord.Client(); //Creating discord.js client (constructor)
 const disbut = require('discord-buttons')(client);
 ```
 
-<br />
+## ✍ | Examples
+All of our Examples and Button Styles are in [examples.md](http://)
+> Also you can check our [Documentation](http://)
+> if you have any other problems/questions, you can join our [Support Server!](https://discord.gg/5JtyYqW)
 
-> For more examples check our [Documentation](https://angelocore.gitbook.io/discord-buttons)
-
-<br />
-
-## Example
-```js
-let button = new disbut.MessageButton()
-  .setStyle('red') //default: blurple
-  .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
-  .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
-  .setDisabled(); //disables the button | default: false
-
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
-```
-
-### URL Buttons
-```js
-let button = new disbut.MessageButton()
-  .setStyle('url') //default: blurple
-  .setURL('https://npmjs.com/discord-buttons') //note: if you use other styles it would be changes to 'url' automaticly (also removes 'id')
-  .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
-  .setDisabled(); //disables the button | default: false
-
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
-```
-
-### Multiple Buttons
-```js
-let button = new disbut.MessageButton()
-  .setStyle('red') //default: blurple
-  .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
-  .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
-  .setDisabled(); //disables the button | default: false
-
-let button2 = new disbut.MessageButton()
-  .setStyle('url') //default: blurple
-  .setLabel('My Second Button!') //default: NO_LABEL_PROVIDED
-  .setURL('https://npmjs.com/discord-buttons') //note: if you use other style you must provide id using .setID('myid')
-
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', {
-  buttons: [
-    button, button2
-  ]
-});
-```
-### With embed
-```js
-let myembed = new discord.MessageEmbed()
-  .setDescription('Hi!');
-
-let btn = new disbut.MessageButton()
-  .setStyle('red') //default: blurple
-  .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
-  .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
-  .setDisabled(); //disables the button | default: false
-
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', { button: btn, embed: myembed });
-```
-### Using command handler?
-```js
-const { MessageButton } = require('discord-buttons');
-
-module.exports = {
-    name: 'test',
-    run: async (client, message, args) => {
-        let button = new MessageButton()
-          .setStyle('red') //default: blurple
-          .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
-          .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
-          .setDisabled(); //disables the button | default: false
-
-        await message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
-    }
-}
-```
-
-## Handle Button
-```js
-client.on('clickButton', async (button) => {
-  if (button.id === 'click_to_function') {
-    button.channel.send(`${button.clicker.user.tag} clicked button!`);
-  }
-});
-```
-
-## Note: don't forgot to put `require('discord-buttons')(client)` after your client
-
-<br>
-
-## Documentation
-Checkout more examples on our [docs](https://angelocore.gitbook.io/discord-buttons)
-
-<br>
-
-## Don't see the buttons?
-The buttons are beta, so to see them you have to be a discord-tester or just wait for the update
-
-<br>
-
-> For any questions or errors, join in our server and report the bug on the #errors channel https://discord.gg/5JtyYqW
-
-<hr>
-
-## Contact
-
-[Youtube](https://www.youtube.com/channel/UCxxK71QFN4_PrBhCFmH2Jmw), [Discord](https://discord.gg/5JtyYqW)
+## 👥 | Contact
+<a href="https://www.youtube.com/channel/UCxxK71QFN4_PrBhCFmH2Jmw"><img src=""https://raw.githubusercontent.com/MikeCodesDotNET/ColoredBadges/master/png/streaming/youtube%402x.png></a>
+<a href="https://discord.gg/5JtyYqW"><img src="https://discord.com/api/guilds/748098690874474567/widget.png?style=banner1"></a>
