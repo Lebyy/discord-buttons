@@ -14,6 +14,7 @@ module.exports = (client) => {
 
     Structures.extend("Message", () => Message);
     Structures.extend("TextChannel", () => TextChannel);
+    Structures.extend("NewsChannel", () => NewsChannel);
     Structures.extend("DMChannel", () => DMChannel);
 
     client.ws.on('INTERACTION_CREATE', data => {
