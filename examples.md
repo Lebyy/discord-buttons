@@ -1,4 +1,4 @@
-<center><h1>Pre-made Buttons and Examples</h1></center>
+<div align="center"><h1>Pre-made Buttons and Examples</h1></div>
 
 ## Examples
 
