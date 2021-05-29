@@ -40,7 +40,7 @@ class MessageButton {
     }
 
     setDisabled(boolean = true) {
-        this.disabled = boolean;
+        this.disabled = Boolean(boolean);
         return this;
     }
 
