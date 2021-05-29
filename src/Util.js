@@ -28,7 +28,7 @@ module.exports = {
         }
 
         if (data.emoji) {
-            if (isNaN(data.emoji.id) && !this.isEmoji(data.emoji.name)) throw new TypeError('INCORRECT_EMOJI_ID: Please provide correct emoji id');
+            if (isNaN(data.emoji ? data.emoji.id : 0) && !this.isEmoji(data.emoji.name)) throw new TypeError('INCORRECT_EMOJI_ID: Please provide correct emoji id');
         }
 
         return {
