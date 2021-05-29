@@ -27,8 +27,7 @@ const disbut = require('discord-buttons')(client);
 
 ## ✍ | Examples
 All of our Examples and Button Styles are in [examples.md](http://)
-> Also you can check our [Documentation](http://)
-> if you have any other problems/questions, you can join our [Support Server!](https://discord.gg/5JtyYqW)
+> Also you can check our [Documentation](http://) \n if you have any other problems/questions, you can join our [Support Server!](https://discord.gg/5JtyYqW)
 
 ## 👥 | Contact
 <a href="https://www.youtube.com/channel/UCxxK71QFN4_PrBhCFmH2Jmw"><img src="https://raw.githubusercontent.com/MikeCodesDotNET/ColoredBadges/master/png/streaming/youtube%402x.png"></a></br>
