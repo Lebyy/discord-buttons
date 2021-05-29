@@ -1,4 +1,4 @@
-# |Pre-made Buttons and Examples|
+<center><h1>Pre-made Buttons and Examples</h1></center>
 
 ## Examples
 
