@@ -44,9 +44,9 @@ message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', b
 ### URL Buttons
 ```js
 let button = new disbut.MessageButton()
+  .setStyle('url') //default: blurple
   .setURL('https://npmjs.com/discord-buttons') //note: if you use other styles it would be changes to 'url' automaticly (also removes 'id')
   .setLabel('My First Button!') //default: NO_LABEL_PROVIDED
-  .setID('click_to_function') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
   .setDisabled(); //disables the button | default: false
 
 message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
