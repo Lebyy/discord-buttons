@@ -13,6 +13,8 @@ let button = new disbut.MessageButton()
 message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
 ```
 
+<img align="center" src="https://cdn.discordapp.com/attachments/846455339419172874/848302344323072041/Outputs.png"></img>
+
 ## Button Styles
 
 | Styles         | Preview                                                                                                           |
