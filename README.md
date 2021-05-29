@@ -9,7 +9,7 @@
     <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://nodei.co/npm/discord-buttons.png?downloads=true&stars=true" alt="NPM Banner"></a>
   </p>
 
-  <img src="http://pays.host/uploads/390c2d6f-7281-4ebd-9429-5dbff5bcee44/RBcQvq7V_.png">
+  <img src="https://cdn.discordapp.com/attachments/846455339419172874/848300816288055296/Main.png">
   <br> <br>
 </div>
 
