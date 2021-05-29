@@ -1,6 +1,7 @@
 const { Structures } = require("discord.js");
 const Message = require('./Classes/Message');
 const TextChannel = require('./Classes/TextChannel');
+const NewsChannel = require('./Classes/NewsChannel');
 const DMChannel = require('./Classes/DMChannel');
 const MessageButton = require('./Classes/MessageButton');
 const INTERACTION_CREATE = require('./Classes/INTERACTION_CREATE.js');
