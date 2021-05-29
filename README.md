@@ -4,11 +4,11 @@
     <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://img.shields.io/npm/v/discord-buttons?maxAge=3600" alt="NPM version" /></a>
     <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://img.shields.io/npm/dt/discord-buttons?maxAge=3600" alt="NPM downloads" /></a>
   </p>
-
   <p>
     <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://nodei.co/npm/discord-buttons.png?downloads=true&stars=true" alt="NPM Banner"></a>
   </p>
-
+</div>
+<div align="center">
   <img src="https://cdn.discordapp.com/attachments/846455339419172874/848300816288055296/Main.png">
   <br> <br>
 </div>
