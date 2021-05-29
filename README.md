@@ -31,5 +31,5 @@ All of our Examples and Button Styles are in [examples.md](http://)
 > if you have any other problems/questions, you can join our [Support Server!](https://discord.gg/5JtyYqW)
 
 ## 👥 | Contact
-<a href="https://www.youtube.com/channel/UCxxK71QFN4_PrBhCFmH2Jmw"><img src=""https://raw.githubusercontent.com/MikeCodesDotNET/ColoredBadges/master/png/streaming/youtube%402x.png"></a>
+<a href="https://www.youtube.com/channel/UCxxK71QFN4_PrBhCFmH2Jmw"><img src="https://raw.githubusercontent.com/MikeCodesDotNET/ColoredBadges/master/png/streaming/youtube%402x.png"></a>
 <a href="https://discord.gg/5JtyYqW"><img src="https://discord.com/api/guilds/748098690874474567/widget.png?style=banner1"></a>
