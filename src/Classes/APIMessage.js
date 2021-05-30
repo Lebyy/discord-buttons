@@ -58,8 +58,8 @@ class APIMessageMain extends APIMessage {
             buttons.push(Util.resolveButton(this.options.button));
         }
 
-        if (buttons.length) {
-            this.data.components = [
+        if (typeof buttons.length == 'number') {
+            this.data.components = buttons.length == 0 ? [] : [
                 {
                     type: 1,
                     components: buttons
