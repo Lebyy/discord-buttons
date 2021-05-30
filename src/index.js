@@ -1,6 +1,7 @@
 const { Structures } = require("discord.js");
 const Message = require('./Classes/Message');
 const TextChannel = require('./Classes/TextChannel');
+const NewsChannel = require('./Classes/NewsChannel');
 const DMChannel = require('./Classes/DMChannel');
 const MessageButton = require('./Classes/MessageButton');
 const INTERACTION_CREATE = require('./Classes/INTERACTION_CREATE.js');
@@ -13,6 +14,7 @@ module.exports = (client) => {
 
     Structures.extend("Message", () => Message);
     Structures.extend("TextChannel", () => TextChannel);
+    Structures.extend("NewsChannel", () => NewsChannel);
     Structures.extend("DMChannel", () => DMChannel);
 
     client.ws.on('INTERACTION_CREATE', data => {
