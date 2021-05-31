@@ -53,7 +53,7 @@ class ButtonCollector extends Collector {
     this.checkEnd();
   }
 
-  get endReason() {
+  endReason() {
     if (this.options.max && this.total >= this.options.max) return 'limit';
     return null;
   }
