@@ -1,59 +1,61 @@
 const discord = require('discord.js');
 const client = new discord.Client()
-const disbut = require('./src/index')(client);
-const Util = require('./src/Util');
+const disbut = require('./src/index');
+disbut(client)
+const Util = require('./src/v12/Util');
 
 client.on('ready', () => console.log(client.user.tag));
 //client.on('debug', console.log);
 
 client.on('message', async message => {
-    if (message.author.bot) return;
+    //if (message.author.bot) return;
     if (message.content.startsWith('o')) {
 
-        await message.channel.messages.fetch();
-
-        let m = message;
-        message = await message.channel.messages.fetch('836158764545343538');
-
-        const filter = (button) => button;
-        const collector = await message.awaitButtons(filter, { time: 5000 });
-
         let btn = new disbut.MessageButton()
-            .setLabel('s');
+            .setLabel('Be cool')
+            .setStyle('grey')
+            .setID('testid')
+            .setEmoji('535993902180859914')
 
-        message.channel.send(`j`);
-        //message.author.send('p', btn);
+        let group1 = new disbut.MessageActionRow()
+            .addComponent(btn)
+            .addComponent(btn);
 
+        let group2 = new disbut.MessageActionRow()
+            .addComponent(btn)
+            .addComponent(btn);
+
+        console.log(message, message.createButtonCollector)
+
+        message.awaitButtons()
+        message.channel.send(`oWumpus!!!`, { component: group1 });
+    } else if (message.content.startsWith('s')) {
+        message.channel.send('sbuwbdsjndsjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjdnkalsnsnsjne dncmsdbh f nrjhknbhnkjrsfnhsdn  rjrjrjrrrrrrrrrrrrrrrrrrrriojaiudhfurjsbvisnfadhiuhsiuzdravei az se kazvam angelo priqtno mi e hahadajidsjidjaisssssssssssssssssssssjuhuifsbebdhsfhdsbfhwbahfdbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbwuiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiibbbbbbbbbbbbbbbbbbbbqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqiiiiiiiiiiiiiiiiiiiiiiiiiibbbdkkkkkkkkkkkkkkkkkkkiwhqksjdhbcuaaaaaaaaaaaaaaaaaaaaaaaaaaudhdncbdjsjooooooooooooooooooooooooooooqqqqqqqqqqqqwwwwwwwwwwwwwwwweeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrttttttttttttttttyyyyyyyyyyyyyyyyuuuuuuuuuuuuuiooooooooooooooooppppppppppppppppppppaaaaaaaaaaasssssssssbbbbbbbbdksndjjjjjjjjjjjjjjjjjjsssssssssssssssssssssssssssssssssadwdabhsbsdgysdhagdagyydihbsbgggggdyeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedbjskjjddddddddddddddddddddddddddddddddddddddddddddddddduwebsddusiudijbuibiabdiugdebiuwbwaibewuafgwifuggggggggggggggggggggggggggggggggggggggggggssssssssssssssssssooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooohsaifhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhweuiooooooooooooooooooooooooooooooooopap\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaufhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhheuwfuuuuuuuuuuuuuuuuuuuuuuuuuuuuusbuwbdsjndsjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjdnkalsnsnsjne dncmsdbh f nrjhknbhnkjrsfnhsdn  rjrjrjrrrrrrrrrrrrrrrrrrrriojaiudhfurjsbvisnfadhiuhsiuzdravei az se kazvam angelo priqtno mi e hahadajidsjidjaisssssssssssssssssssssjuhuifsbebdhsfhdsbfhwbahfdbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbwuiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiibbbbbbbbbbbbbbbbbbbbqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqiiiiiiiiiiiiiiiiiiiiiiiiiibbbdkkkkkkkkkkkkkkkkkkkiwhqksjdhbcuaaaaaaaaaaaaaaaaaaaaaaaaaaudhdncbdjsjooooooooooooooooooooooooooooqqqqqqqqqqqqwwwwwwwwwwwwwwwweeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrttttttttttttttttyyyyyyyyyyyyyyyyuuuuuuuuuuuuuiooooooooooooooooppppppppppppppppppppaaaaaaaaaaasssssssssbbbbbbbbdksndjjjjjjjjjjjjjjjjjjsssssssssssssssssssssssssssssssssadwdabhsbsdgysdhagdagyydihbsbgggggdyeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedbjskjjddddddddddddddddddddddddddddddddddddddddddddddddduwebsddusiudijbuibiabdiugdebiuwbwaibewuafgwifuggggggggggggggggggggggggggggggggggggggggggssssssssssssssssssooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooohsaifhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhweuiooooooooooooooooooooooooooooooooopapaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaufhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhheuwfuuuuuuuuuuuuuuuuuuuuuuuuuuuuu', {
+            tts: true,
+            split: true
+        })
     }
 })
 
 client.on('clickButton', async (button) => {
-    console.log(button)
-    //button.defer()
 
-    let embed = new discord.MessageEmbed()
-        .setDescription('I AM COOL GUY');
+    console.log(button.message.components)
+
+    if (button.clicker.user.id === '519759839673581568') {
+        button.channel.send(`SPAMMER SMOTAN BUG ${button.clicker.member}`)
+    }
+
+    console.log(button.clicker.user.tag)
+    await button.defer();
+    const utilityembed = new discord.MessageEmbed()
+        .setDescription(`Clicked by ${button.clicker.user.tag}`);
 
     let btn = new disbut.MessageButton()
-        .setStyle('red')
-        .setLabel('OMG I AM COOL')
-        .setID('ang')
+        .setEmoji('785062885952192512')
+        .setID('d')
+        .setStyle('blurple');
 
-    let btn2 = new disbut.MessageButton()
-        .setStyle('url')
-        .setLabel('U cant click')
-        .setURL('https://discord.com')
-        .setDisabled()
-
-    button.think(true)
-
-    await wait(1000);
-
-    button.reply.edit('Yeah, it\'s working', { buttons: [btn] });
-
-    await wait(1000);
-
-    button.reply.edit('trueee', btn2)
+    await button.message.edit('hi', { button: null });
 });
 
 client.login('');
