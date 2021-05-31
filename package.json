@@ -1,6 +1,6 @@
 {
   "name": "discord-buttons",
-  "version": "2.5.0-dev",
+  "version": "3.0.0",
   "description": "Discord.js buttons",
   "main": "src/index.js",
   "types": "typings/index.d.ts",
@@ -16,8 +16,8 @@
     "buttons",
     "discordjsbuttons",
     "button",
-    "angeloii",
-    "src"
+    "src",
+    "clickbois"
   ],
   "author": "Angelo II#0007",
   "license": "Apache-2.0",
