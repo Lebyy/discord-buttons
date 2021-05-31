@@ -1,6 +1,7 @@
 exports.MessageComponentTypes = createEnum([null, 'ACTION_ROW', 'BUTTON', 'SELECT_MENU']);
 
 exports.MessageButtonStyles = createEnum([null, 'blurple', 'grey', 'green', 'red', 'url']);
+exports.MessageButtonStylesAliases = createEnum([null, 'PRIMARY', 'SECONDARY', 'SUCCESS', 'DESTRUCTIVE', 'LINK']);
 
 function createEnum(keys) {
     const obj = {};

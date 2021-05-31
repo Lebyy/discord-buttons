@@ -14,11 +14,11 @@ class MessageButton extends BaseMessageComponent {
 
         this.style = 'style' in data ? resolveStyle(data.style) : null;
 
-        this.label = 'label' in data ? resolveString(data.label) : null;
+        this.label = ('label' in data && data.label) ? resolveString(data.label) : undefined;
 
         this.disabled = 'disabled' in data ? data.disabled : false;
 
-        this.emoji = 'emoji' in data ? data.emoji : null;
+        this.emoji = 'emoji' in data ? data.emoji : undefined;
 
         if ('url' in data && data.url)
             this.url = resolveString(data.url)

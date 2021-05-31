@@ -24,18 +24,15 @@ class ButtonEvent {
 
         this.clicker = {
             user: this.client.users.resolve(data.guild_id ? data.member.user.id : data.user.id),
+            member: this.guild.members.resolve(data.member.user.id),
             fetch: async () => {
-                this.clicker.user = await this.client.users.fetch(data.user.id);
+                this.clicker.user = this.client.users.resolve(data.guild_id ? data.member.user.id : data.user.id);
                 if (this.guild) {
                     this.clicker.member = await this.guild.members.fetch(data.member.user.id);
                 }
                 return true;
             }
         };
-
-        if (data.guild_id) {
-            this.clicker.member = this.guild.members.resolve(data.member.user.id);
-        }
 
         this.message = new Message(client, data.message, this.channel);
 

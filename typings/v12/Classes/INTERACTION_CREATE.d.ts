@@ -11,6 +11,7 @@ declare class ButtonEvent {
     channel: Channel;
     clicker: {
         user: User;
+        member: GuildMember;
         fetch: AsyncFunction;
     };
     message: Message;
@@ -29,4 +30,4 @@ declare class ButtonEvent {
 }
 import Message = require("./Message");
 import WebhookClient = require("./WebhookClient");
-import { Client, Snowflake, Guild, Channel, User } from 'discord.js';
+import { Client, Snowflake, Guild, Channel, User, GuildMember } from 'discord.js';

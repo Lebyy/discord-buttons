@@ -1,10 +1,22 @@
-const { MessageButtonStyles, MessageComponentTypes } = require('./Constants.js');
+const { MessageButtonStyles, MessageButtonStylesAliases, MessageComponentTypes } = require('./Constants.js');
 
 module.exports = {
     resolveStyle(style) {
         if (!style || style === undefined || style === null) throw new TypeError('NO_BUTTON_STYLE: Please provide button style');
 
-        if (!MessageButtonStyles[style] || MessageButtonStyles[style] === undefined || MessageButtonStyles[style] === null) throw new TypeError('INVALID_BUTTON_STYLE: An invalid button styles was provided');
+        if (style === 'gray') style = 'grey';
+
+        if ((!MessageButtonStyles[style]
+            ||
+            MessageButtonStyles[style] === undefined
+            ||
+            MessageButtonStyles[style] === null)
+            &&
+            (!MessageButtonStylesAliases[style]
+                ||
+                MessageButtonStylesAliases[style] === undefined
+                ||
+                MessageButtonStylesAliases[style] === null)) throw new TypeError('INVALID_BUTTON_STYLE: An invalid button styles was provided');
 
         return typeof style === 'string' ? MessageButtonStyles[style] : style;
     },
