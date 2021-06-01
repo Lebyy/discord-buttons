@@ -56,7 +56,7 @@ client.on('clickButton', async (button) => {
     await button.message.edit('hi', { button: null });
 });
 
-client.login('Nzg0MDk5MTI1OTkzNjY4Njkw.X8kXNw.3lncbtXsCLzZVwgW-17JqfhEIhU');
+client.login('');
 
 function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
