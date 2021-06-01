@@ -12,12 +12,12 @@ declare class ButtonEvent {
     clicker: {
         user: User;
         member: GuildMember;
-        fetch: AsyncFunction;
+        fetch: boolean;
     };
     message: Message;
     webhook: WebhookClient;
     replied: boolean;
-    deferred: boolean;
+    deferred: Promise<boolean>;
     defer(ephemeral?: boolean): Promise<void>;
     think(ephemeral?: boolean): Promise<void>;
     followUp(content: any, options: any): Promise<void>;
