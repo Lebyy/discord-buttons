@@ -26,7 +26,7 @@ const disbut = require('discord-buttons')(client);
 ```
 
 ## ✍ | Examples
-All of our Examples and Button Styles are in [examples.md](https://github.com/AngeloCore/discord-buttons/blob/main/examples.md)
+All of our Examples and Button Styles are in [examples.md]([http://](https://github.com/AngeloCore/discord-buttons/blob/main/examples.md))
 Also you can check our [Documentation](https://discord-buttons.js.org), if you have any other problems/questions, you can join our [Support Server!](https://discord.gg/5JtyYqW)
 
 ## 👥 | Contact

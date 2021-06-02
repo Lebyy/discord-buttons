@@ -5,7 +5,7 @@ declare class ButtonCollector extends Collector<any, any> {
     users: Collection<any, any>;
     total: number;
     empty(): void;
-    get endReason(): string | null;
+    get endReason(): void;
     _handleChannelDeletion(channel: Channel): void;
     _handleGuildDeletion(guild: Guild): void;
     _handleMessageDeletion(message: Message): void;

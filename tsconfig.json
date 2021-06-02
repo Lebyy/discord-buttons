@@ -1,9 +1,11 @@
 {
-    "include": ["./src"],
-    "compilerOptions": {
-      "allowJs": true,
-      "declaration": true,
-      "emitDeclarationOnly": true,
-      "outDir": "./typings"
-    }
+  "include": [
+    "./src"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./typings"
   }
+}
