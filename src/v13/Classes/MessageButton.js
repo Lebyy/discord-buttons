@@ -1,7 +1,7 @@
-const { MessageComponentTypes } = require('../Constants.js');
-const BaseMessageComponent = require('./interfaces/BaseMessageComponent');
-const { resolveString } = require('discord.js').Util;
-const { resolveStyle, isEmoji } = require('../Util');
+const { MessageComponentTypes } = require('../../v12/Constants');
+const BaseMessageComponent = require('../../v12/Classes/interfaces/BaseMessageComponent');
+const { verifyString } = require('discord.js').Util;
+const { resolveStyle, isEmoji } = require('../../v12/Util');
 
 class MessageButton extends BaseMessageComponent {
 
@@ -14,14 +14,14 @@ class MessageButton extends BaseMessageComponent {
 
         this.style = 'style' in data ? resolveStyle(data.style) : null;
 
-        this.label = ('label' in data && data.label) ? resolveString(data.label) : undefined;
+        this.label = ('label' in data && data.label) ? verifyString(data.label) : undefined;
 
         this.disabled = 'disabled' in data ? data.disabled : false;
 
         this.emoji = 'emoji' in data ? data.emoji : undefined;
 
         if ('url' in data && data.url)
-            this.url = resolveString(data.url)
+            this.url = verifyString(data.url)
         else this.url = undefined;
 
         if (('id' in data && data.id) || ('custom_id' in data && data.custom_id))
@@ -38,7 +38,7 @@ class MessageButton extends BaseMessageComponent {
     }
 
     setLabel(label) {
-        label = resolveString(label);
+        label = verifyString(label);
         this.label = label;
         return this;
     }
@@ -49,20 +49,20 @@ class MessageButton extends BaseMessageComponent {
     }
 
     setURL(url) {
-        this.url = resolveString(url);
+        this.url = verifyString(url);
         return this;
     }
 
     setID(id) {
-        this.custom_id = resolveString(id);
+        this.custom_id = verifyString(id);
         return this;
     }
 
-    setEmoji(emoji) {
+    setEmoji(emoji, animated) {
         if (!emoji) return this;
-        if (isEmoji(emoji) === true) this.emoji = { name: resolveString(emoji) }
+        if (isEmoji(emoji) === true) this.emoji = { name: verifyString(emoji) }
         else if (emoji.id) this.emoji = { id: emoji.id }
-        else if (resolveString(emoji).length > 0) this.emoji = { id: resolveString(emoji) }
+        else if (verifyString(emoji).length > 0) this.emoji = { id: verifyString(emoji) }
         else this.emoji = { name: null, id: null };
         if ((animated && typeof (animated) !== 'boolean') || (emoji.animated && typeof (emoji.animated) !== 'boolean')) throw new SyntaxError('The emoji animated option must be boolean');
         if (this.emoji && typeof (emoji.animated) === 'boolean') this.emoji.animated = emoji.animated;
