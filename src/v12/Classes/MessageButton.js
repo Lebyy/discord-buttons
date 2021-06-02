@@ -58,7 +58,7 @@ class MessageButton extends BaseMessageComponent {
         return this;
     }
 
-    setEmoji(emoji) {
+    setEmoji(emoji, animated) {
         if (!emoji) return this;
         if (isEmoji(emoji) === true) this.emoji = { name: resolveString(emoji) }
         else if (emoji.id) this.emoji = { id: emoji.id }
