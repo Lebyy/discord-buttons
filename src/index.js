@@ -29,13 +29,11 @@ module.exports = (client) => {
 
         if (!data.message) return;
 
-        if (data.data.component_type === 2) {
-            if (version === 12) {
-                const INTERACTION_CREATE = require('./v12/Classes/INTERACTION_CREATE');
-                const button = new INTERACTION_CREATE(client, data);
+        if (data.data.component_type) {
+            const INTERACTION_CREATE = require('./v12/Classes/INTERACTION_CREATE');
+            const button = new INTERACTION_CREATE(client, data);
 
-                client.emit('clickButton', button);
-            }
+            client.emit('clickButton', button);
         }
     });
 

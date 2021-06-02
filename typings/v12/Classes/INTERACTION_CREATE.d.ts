@@ -12,7 +12,7 @@ declare class ButtonEvent {
     clicker: {
         user: User;
         member: GuildMember;
-        fetch: boolean;
+        fetch: Promise<true>;
     };
     message: Message;
     webhook: WebhookClient;
