@@ -36,7 +36,10 @@ class Message extends Structures.get("Message") {
         );
     }
 
-    edit(content, options) {
+    edit(content, options = {}) {
+        if (this.components.length > 0 && options !== null && options.component === undefined && options.components === undefined) {
+            options.components = this.components.map(c => BaseMessageComponent.create(c, this.client));
+        }
         const { data } =
             content instanceof APIMessage ? content.resolveData() : APIMessage.create(this, content, options).resolveData();
         return this.client.api.channels[this.channel.id].messages[this.id].patch({ data }).then(d => {

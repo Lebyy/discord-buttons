@@ -21,8 +21,6 @@ client.on('message', async (message) => {
             .setStyle('gray')
             .setID('testid')
 
-        console.log(btn)
-
         let group1 = new disbut.MessageActionRow()
             .addComponent(btn)
             .addComponent(btn);
@@ -31,7 +29,7 @@ client.on('message', async (message) => {
             .addComponent(btn)
             .addComponent(btn);
 
-        let m = await message.channel.send(`Wumpus!!!`, { component: group1 });
+        let m = await message.channel.send(`Wumpus!!!`, { components: [group1, group2]});
 
         //await wait(1000);
 
@@ -65,15 +63,16 @@ client.on('clickButton', async (button) => {
     let row = new disbut.MessageActionRow()
         .addComponent(btn)
 
-    await button.channel.send('hi', { components: row });
     await button.reply.send('hi', { components: row });
+    await wait(1000);
+    await button.message.edit('hi', null)
 });
 
 client.on('interaction', async (interaction) => {
     let btn = new disbut.MessageButton()
-    .setEmoji('785062885952192512')
-    .setID('d')
-    .setStyle('blurple');
+        .setEmoji('785062885952192512')
+        .setID('d')
+        .setStyle('blurple');
 
     interaction.user.send('GG', btn);
 

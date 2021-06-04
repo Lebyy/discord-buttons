@@ -1,9 +1,6 @@
 const { MessageComponentTypes } = require('../../Constants');
 const { resolveType } = require('../../Util');
 
-var version = require('discord.js').version.split('');
-version = parseInt(version[0] + version[1]);
-
 class BaseMessageComponent {
     constructor(data) {
         this.type = 'type' in data ? resolveType(data.type) : null;
@@ -23,7 +20,7 @@ class BaseMessageComponent {
                 break;
             }
             case MessageComponentTypes.BUTTON: {
-                const MessageButton = require(`../../../v${version}/Classes/MessageButton`);
+                const MessageButton = require('../MessageButton');
                 component = new MessageButton(data);
                 break;
             }
