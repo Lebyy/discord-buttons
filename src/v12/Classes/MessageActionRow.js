@@ -1,41 +1,46 @@
-const { MessageComponentTypes } = require('../Constants');
-const BaseMessageComponent = require('./interfaces/BaseMessageComponent');
+const { MessageComponentTypes } = require("../Constants");
+const BaseMessageComponent = require("./interfaces/BaseMessageComponent");
 
-class MessageActionRow  extends BaseMessageComponent {
+class MessageActionRow extends BaseMessageComponent {
+  constructor(data = {}) {
+    super({ type: "ACTION_ROW" });
+    this.setup(data);
+  }
 
-    constructor(data = {}) {
-        super({ type: 'ACTION_ROW' });
-        this.setup(data);
+  setup(data) {
+    if ("component" in data) {
+      this.component = BaseMessageComponent.create(component, null, true);
     }
 
-    setup(data) {
-        if ('component' in data) {
-            this.component = BaseMessageComponent.create(component, null, true);
-        }
-        
-        this.components = [];
-        if ('components' in data) {
-            this.components = data.components.map(c => BaseMessageComponent.create(c, null, true));
-        }
-
-        return this;
+    this.components = [];
+    if ("components" in data) {
+      this.components = data.components.map((c) =>
+        BaseMessageComponent.create(c, null, true)
+      );
     }
 
-    addComponents(...components) {
-        this.components.push(...components.flat(2).map(c => BaseMessageComponent.create(c, null, true)));
-        return this;
-    }
+    return this;
+  }
 
-    addComponent(component) {
-        return this.addComponents(component);
-    }
+  addComponents(...components) {
+    this.components.push(
+      ...components
+        .flat(2)
+        .map((c) => BaseMessageComponent.create(c, null, true))
+    );
+    return this;
+  }
 
-    toJSON() {
-        return {
-            components: this.components.map(c => c.toJSON()),
-            type: MessageComponentTypes[this.type],
-        };
-    }
+  addComponent(component) {
+    return this.addComponents(component);
+  }
+
+  toJSON() {
+    return {
+      components: this.components.map((c) => c.toJSON()),
+      type: MessageComponentTypes[this.type],
+    };
+  }
 }
 
 module.exports = MessageActionRow;

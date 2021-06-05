@@ -1,3 +1,6 @@
-export class sendAPICallback extends dAPIMessage {}
-export class APIMessage extends dAPIMessage {}
-import { APIMessage as dAPIMessage } from "discord.js";
+export class sendAPICallback {
+    resolveData(): sendAPICallback;
+}
+export class APIMessage {
+    resolveData(): APIMessage;
+}
