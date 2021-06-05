@@ -121,7 +121,8 @@ class ButtonEvent {
       }
 
       const { data: info, files } = await apiMessage.resolveFiles();
-      await this.client.api
+      this.replied = true;
+      return await this.client.api
         .interactions(this.discordID, this.token)
         .callback.post({
           data: {
@@ -136,7 +137,6 @@ class ButtonEvent {
           },
           files,
         });
-      this.replied = true;
     };
 
     let _fetch = async () => {
