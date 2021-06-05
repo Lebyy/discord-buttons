@@ -1,23 +1,23 @@
 export = ButtonEvent;
 declare class ButtonEvent {
-    constructor(client: Client, data: object);
-    client: Client;
-    id: Snowflake;
+    constructor(client: any, data: any);
+    client: any;
+    id: any;
     version: any;
-    token: string;
-    discordID: Snowflake;
-    applicationID: Snowflake;
-    guild: Guild;
-    channel: Channel;
+    token: any;
+    discordID: any;
+    applicationID: any;
+    guild: any;
+    channel: any;
     clicker: {
-        user: User;
-        member: GuildMember;
-        fetch: Promise<true>;
+        user: any;
+        member: any;
+        fetch: () => Promise<boolean>;
     };
     message: Message;
     webhook: WebhookClient;
     replied: boolean;
-    deferred: Promise<boolean>;
+    deferred: boolean;
     defer(ephemeral?: boolean): Promise<void>;
     think(ephemeral?: boolean): Promise<void>;
     followUp(content: any, options: any): Promise<void>;
@@ -30,4 +30,3 @@ declare class ButtonEvent {
 }
 import Message = require("./Message");
 import WebhookClient = require("./WebhookClient");
-import { Client, Snowflake, Guild, Channel, User, GuildMember } from 'discord.js';

@@ -1,15 +1,13 @@
 export = ButtonCollector;
-declare class ButtonCollector extends Collector<any, any> {
-    constructor(message: Message, filter: any, options?: {});
-    message: Message;
-    users: Collection<any, any>;
+declare class ButtonCollector {
+    constructor(message: any, filter: any, options?: {});
+    message: any;
+    users: any;
     total: number;
     empty(): void;
-    get endReason(): void;
-    _handleChannelDeletion(channel: Channel): void;
-    _handleGuildDeletion(guild: Guild): void;
-    _handleMessageDeletion(message: Message): void;
+    _handleChannelDeletion(channel: any): void;
+    _handleGuildDeletion(guild: any): void;
+    _handleMessageDeletion(message: any): void;
+    collect(button: any): any;
+    get endReason(): "limit" | "buttonLimit" | "userLimit";
 }
-import { Collector, Message, Channel, Guild } from "discord.js";
-import Collection_1 = require("discord.js");
-import Collection = Collection_1.Collection;
