@@ -43,9 +43,7 @@ module.exports = {
       );
 
     if (data.style === MessageButtonStyles["url"] && !data.url)
-      throw new TypeError(
-        "NO_BUTTON_URL: No url was provided"
-      );
+      throw new TypeError("NO_BUTTON_URL: No url was provided");
 
     if (data.style !== MessageButtonStyles["url"] && data.url)
       throw new TypeError(

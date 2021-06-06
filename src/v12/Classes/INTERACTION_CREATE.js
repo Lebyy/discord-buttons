@@ -146,14 +146,18 @@ class ButtonEvent {
 
     let _edit = async (content, options) => {
       if (this.replied === false)
-        throw new Error("BUTTON_HAS_NO_REPLY: The button doesn't have a reply issued");
+        throw new Error(
+          "BUTTON_HAS_NO_REPLY: The button doesn't have a reply issued"
+        );
       const raw = await this.webhook.editMessage("@original", content, options);
       return this.channel ? this.channel.messages.add(raw) : raw;
     };
 
     let _delete = async () => {
       if (this.replied === false)
-        throw new Error("BUTTON_HAS_NO_REPLY: The button doesn't have a reply issued");
+        throw new Error(
+          "BUTTON_HAS_NO_REPLY: The button doesn't have a reply issued"
+        );
       return await this.webhook.deleteMessage("@original");
     };
 

@@ -9,9 +9,7 @@ module.exports = (client) => {
   }
 
   if (!client || !client instanceof Client)
-    throw new Error(
-      "INVALID_CLIENT_PROVIDED: Client is a required option"
-    );
+    throw new Error("INVALID_CLIENT_PROVIDED: Client is a required option");
 
   const TextChannel = require("./v12/Classes/TextChannel");
   const DMChannel = require("./v12/Classes/DMChannel");

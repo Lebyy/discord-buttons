@@ -67,7 +67,9 @@ class MessageButton extends BaseMessageComponent {
       (animated && typeof animated !== "boolean") ||
       (emoji.animated && typeof emoji.animated !== "boolean")
     )
-      throw new SyntaxError("Emoji Animated option must be either true or false");
+      throw new SyntaxError(
+        "Emoji Animated option must be either true or false"
+      );
     if (this.emoji && typeof emoji.animated === "boolean")
       this.emoji.animated = emoji.animated;
     if (this.emoji && typeof animated === "boolean")
