@@ -29,7 +29,7 @@ client.on('message', async (message) => {
             .addComponent(btn)
             .addComponent(btn);
 
-        let m = await message.channel.send(`Wumpus!!!`, { components: [group1, group2]});
+        let m = await message.channel.send(`Wumpus!!!`, group1);
 
         //await wait(1000);
 
@@ -63,9 +63,9 @@ client.on('clickButton', async (button) => {
     let row = new disbut.MessageActionRow()
         .addComponent(btn)
 
-    await button.reply.send('hi', { components: row });
+    let s = await button.think();
     await wait(1000);
-    await button.message.edit('hi', null)
+    await s.edit('hi', null);
 });
 
 client.on('interaction', async (interaction) => {

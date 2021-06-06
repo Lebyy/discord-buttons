@@ -54,6 +54,7 @@ class ButtonEvent {
             },
         });
         this.deferred = true;
+        return this.reply;
     }
 
     async think(ephemeral = false) {
@@ -67,6 +68,7 @@ class ButtonEvent {
             },
         });
         this.replied = true;
+        return this.reply;
     }
 
     async followUp(content, options) {
@@ -105,6 +107,7 @@ class ButtonEvent {
                     files
                 });
             this.replied = true;
+            return this.reply;
         }
 
         let _fetch = async () => {
