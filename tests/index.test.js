@@ -1,8 +1,8 @@
 const discord = require("discord.js");
 const client = new discord.Client({ intents: discord.Intents.ALL });
-const disbut = require("./src/index");
+const disbut = require("../src/index");
 disbut(client);
-const Util = require("./src/v12/Util");
+const Util = require("../src/v12/Util");
 
 client.on("ready", () => {
   console.log(client.user.tag);
