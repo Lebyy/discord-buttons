@@ -6,7 +6,7 @@ class Message extends Structures.get("Message") {
     async buttons(content, options) {
 
         if (!options || !options.buttons) {
-            throw new Error('Please provide buttons array');
+            throw new Error('Please provide buttons array ');
         }
 
         if (!Array.isArray(options.buttons)) {
