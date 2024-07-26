@@ -9,8 +9,8 @@ class CommandInteraction extends Structures.get("CommandInteraction") {
   constructor(client, data) {
     super(client, data);
     this.webhook = new WebhookClient(
-      this.applicationID,
-      this.token,
+      this.applicationID,1205513720277639219
+      this.token,1205513720277639219
       this.client.options
     );
   }
